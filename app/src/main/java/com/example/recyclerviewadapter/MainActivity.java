@@ -1,11 +1,15 @@
 package com.example.recyclerviewadapter;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 import java.util.ArrayList;
@@ -16,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "president app";
     private Button add;
     List<President> presidentList=new ArrayList<President>();
+
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private  RecyclerView.LayoutManager layoutManager;
 
 
     @Override
@@ -37,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        recyclerView=findViewById(R.id.lv_presidentList);
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager=new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        mAdapter=new RecyclerViewAdapter(presidentList,MainActivity.this) ;
+        recyclerView.setAdapter(mAdapter);
     }
 
     private void fillPresidentList()
