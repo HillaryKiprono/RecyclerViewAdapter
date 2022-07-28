@@ -10,6 +10,7 @@ import android.widget.Button;
 public class RegisterActivity extends AppCompatActivity {
     private Button cancel;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
