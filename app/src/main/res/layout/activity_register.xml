@@ -87,10 +87,10 @@
         android:id="@+id/imgurl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="imgurl"
+        android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toTopOf="@+id/textView12" />
 
